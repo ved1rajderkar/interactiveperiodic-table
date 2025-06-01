@@ -6,7 +6,7 @@
     <title>Interactive Periodic Table</title>
     <link rel="shortcut icon" type="image/icon" href="Copilot_20250601_182519.png" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
+       <style>
         :root {
             --alkali: #FF6F61;
             --alkaline: #FFB347;
@@ -171,7 +171,6 @@
             #popup .bg-white { padding: 1rem; }
             #popup h2 { font-size: 1rem; }
             #popup p { font-size: 0.8rem; }
-            .sparkle { width: 6px; height: 6px; }
         }
 
         @media (max-width: 480px) {
@@ -182,17 +181,12 @@
             .element-number { font-size: 0.4rem; }
             .element-symbol { font-size: 0.7rem; }
             .element-name { font-size: 0.3rem; }
-            .element { min-height: 2rem; animation: none; }
+            .element { min-height: 2rem; }
             #searchInput { font-size: 0.8rem; }
-            .sparkle { display: none; }
         }
     </style>
 </head>
 <body class="font-sans text-white p-3">
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
     <div id="tooltip"></div>
     <div id="popup" class="fixed z-50 inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden">
         <div class="bg-white p-4 rounded-lg shadow-lg text-center text-black relative">
@@ -209,132 +203,132 @@
         </div>
         <div class="grid grid-cols-18 gap-1" id="periodicTable">
             <!-- Period 1 -->
-            <div class="element nonmetal col-start-1 row-start-1" data-symbol="H" data-name="Hydrogen" data-number="1" data-mass="1.00794" style="--n: 1;"></div>
-            <div class="element noble col-start-18 row-start-1" data-symbol="He" data-name="Helium" data-number="2" data-mass="4.002602" style="--n: 2;"></div>
+            <div class="element nonmetal col-start-1 row-start-1" data-symbol="H" data-name="Hydrogen" data-number="1" data-mass="1.00794"></div>
+            <div class="element noble col-start-18 row-start-1" data-symbol="He" data-name="Helium" data-number="2" data-mass="4.002602"></div>
             <!-- Period 2 -->
-            <div class="element alkali col-start-1 row-start-2" data-symbol="Li" data-name="Lithium" data-number="3" data-mass="6.941" style="--n: 3;"></div>
-            <div class="element alkaline col-start-2 row-start-2" data-symbol="Be" data-name="Beryllium" data-number="4" data-mass="9.012182" style="--n: 4;"></div>
-            <div class="element metalloid col-start-13 row-start-2" data-symbol="B" data-name="Boron" data-number="5" data-mass="10.811" style="--n: 5;"></div>
-            <div class="element nonmetal col-start-14 row-start-2" data-symbol="C" data-name="Carbon" data-number="6" data-mass="12.0107" style="--n: 6;"></div>
-            <div class="element nonmetal col-start-15 row-start-2" data-symbol="N" data-name="Nitrogen" data-number="7" data-mass="14.00674" style="--n: 7;"></div>
-            <div class="element nonmetal col-start-16 row-start-2" data-symbol="O" data-name="Oxygen" data-number="8" data-mass="15.9994" style="--n: 8;"></div>
-            <div class="element nonmetal col-start-17 row-start-2" data-symbol="F" data-name="Fluorine" data-number="9" data-mass="18.9984032" style="--n: 9;"></div>
-            <div class="element noble col-start-18 row-start-2" data-symbol="Ne" data-name="Neon" data-number="10" data-mass="20.1797" style="--n: 10;"></div>
+            <div class="element alkali col-start-1 row-start-2" data-symbol="Li" data-name="Lithium" data-number="3" data-mass="6.941"></div>
+            <div class="element alkaline col-start-2 row-start-2" data-symbol="Be" data-name="Beryllium" data-number="4" data-mass="9.012182"></div>
+            <div class="element metalloid col-start-13 row-start-2" data-symbol="B" data-name="Boron" data-number="5" data-mass="10.811"></div>
+            <div class="element nonmetal col-start-14 row-start-2" data-symbol="C" data-name="Carbon" data-number="6" data-mass="12.0107"></div>
+            <div class="element nonmetal col-start-15 row-start-2" data-symbol="N" data-name="Nitrogen" data-number="7" data-mass="14.00674"></div>
+            <div class="element nonmetal col-start-16 row-start-2" data-symbol="O" data-name="Oxygen" data-number="8" data-mass="15.9994"></div>
+            <div class="element nonmetal col-start-17 row-start-2" data-symbol="F" data-name="Fluorine" data-number="9" data-mass="18.9984032"></div>
+            <div class="element noble col-start-18 row-start-2" data-symbol="Ne" data-name="Neon" data-number="10" data-mass="20.1797"></div>
             <!-- Period 3 -->
-            <div class="element alkali col-start-1 row-start-3" data-symbol="Na" data-name="Sodium" data-number="11" data-mass="22.989769" style="--n: 11;"></div>
-            <div class="element alkaline col-start-2 row-start-3" data-symbol="Mg" data-name="Magnesium" data-number="12" data-mass="24.305" style="--n: 12;"></div>
-            <div class="element post-transition col-start-13 row-start-3" data-symbol="Al" data-name="Aluminum" data-number="13" data-mass="26.981538" style="--n: 13;"></div>
-            <div class="element metalloid col-start-14 row-start-3" data-symbol="Si" data-name="Silicon" data-number="14" data-mass="28.0855" style="--n: 14;"></div>
-            <div class="element nonmetal col-start-15 row-start-3" data-symbol="P" data-name="Phosphorus" data-number="15" data-mass="30.973762" style="--n: 15;"></div>
-            <div class="element nonmetal col-start-16 row-start-3" data-symbol="S" data-name="Sulfur" data-number="16" data-mass="32.06" style="--n: 16;"></div>
-            <div class="element nonmetal col-start-17 row-start-3" data-symbol="Cl" data-name="Chlorine" data-number="17" data-mass="35.45" style="--n: 17;"></div>
-            <div class="element noble col-start-18 row-start-3" data-symbol="Ar" data-name="Argon" data-number="18" data-mass="39.948" style="--n: 18;"></div>
+            <div class="element alkali col-start-1 row-start-3" data-symbol="Na" data-name="Sodium" data-number="11" data-mass="22.989769"></div>
+            <div class="element alkaline col-start-2 row-start-3" data-symbol="Mg" data-name="Magnesium" data-number="12" data-mass="24.305"></div>
+            <div class="element post-transition col-start-13 row-start-3" data-symbol="Al" data-name="Aluminum" data-number="13" data-mass="26.981538"></div>
+            <div class="element metalloid col-start-14 row-start-3" data-symbol="Si" data-name="Silicon" data-number="14" data-mass="28.0855"></div>
+            <div class="element nonmetal col-start-15 row-start-3" data-symbol="P" data-name="Phosphorus" data-number="15" data-mass="30.973762"></div>
+            <div class="element nonmetal col-start-16 row-start-3" data-symbol="S" data-name="Sulfur" data-number="16" data-mass="32.06"></div>
+            <div class="element nonmetal col-start-17 row-start-3" data-symbol="Cl" data-name="Chlorine" data-number="17" data-mass="35.45"></div>
+            <div class="element noble col-start-18 row-start-3" data-symbol="Ar" data-name="Argon" data-number="18" data-mass="39.948"></div>
             <!-- Period 4 -->
-            <div class="element alkali col-start-1 row-start-4" data-symbol="K" data-name="Potassium" data-number="19" data-mass="39.0983" style="--n: 19;"></div>
-            <div class="element alkaline col-start-2 row-start-4" data-symbol="Ca" data-name="Calcium" data-number="20" data-mass="40.08" style="--n: 20;"></div>
-            <div class="element transition col-start-3 row-start-4" data-symbol="Sc" data-name="Scandium" data-number="21" data-mass="44.955912" style="--n: 21;"></div>
-            <div class="element transition col-start-4 row-start-4" data-symbol="Ti" data-name="Titanium" data-number="22" data-mass="47.867" style="--n: 22;"></div>
-            <div class="element transition col-start-5 row-start-4" data-symbol="V" data-name="Vanadium" data-number="23" data-mass="50.9415" style="--n: 23;"></div>
-            <div class="element transition col-start-6 row-start-4" data-symbol="Cr" data-name="Chromium" data-number="24" data-mass="51.9961" style="--n: 24;"></div>
-            <div class="element transition col-start-7 row-start-4" data-symbol="Mn" data-name="Manganese" data-number="25" data-mass="54.938045" style="--n: 25;"></div>
-            <div class="element transition col-start-8 row-start-4" data-symbol="Fe" data-name="Iron" data-number="26" data-mass="55.845" style="--n: 26;"></div>
-            <div class="element transition col-start-9 row-start-4" data-symbol="Co" data-name="Cobalt" data-number="27" data-mass="58.933195" style="--n: 27;"></div>
-            <div class="element transition col-start-10 row-start-4" data-symbol="Ni" data-name="Nickel" data-number="28" data-mass="58.6934" style="--n: 28;"></div>
-            <div class="element transition col-start-11 row-start-4" data-symbol="Cu" data-name="Copper" data-number="29" data-mass="63.546" style="--n: 29;"></div>
-            <div class="element post-transition col-start-12 row-start-4" data-symbol="Zn" data-name="Zinc" data-number="30" data-mass="65.38" style="--n: 30;"></div>
-            <div class="element post-transition col-start-13 row-start-4" data-symbol="Ga" data-name="Gallium" data-number="31" data-mass="69.723" style="--n: 31;"></div>
-            <div class="element metalloid col-start-14 row-start-4" data-symbol="Ge" data-name="Germanium" data-number="32" data-mass="72.64" style="--n: 32;"></div>
-            <div class="element metalloid col-start-15 row-start-4" data-symbol="As" data-name="Arsenic" data-number="33" data-mass="74.9216" style="--n: 33;"></div>
-            <div class="element nonmetal col-start-16 row-start-4" data-symbol="Se" data-name="Selenium" data-number="34" data-mass="78.96" style="--n: 34;"></div>
-            <div class="element nonmetal col-start-17 row-start-4" data-symbol="Br" data-name="Bromine" data-number="35" data-mass="79.904" style="--n: 35;"></div>
-            <div class="element noble col-start-18 row-start-4" data-symbol="Kr" data-name="Krypton" data-number="36" data-mass="83.798" style="--n: 36;"></div>
+            <div class="element alkali col-start-1 row-start-4" data-symbol="K" data-name="Potassium" data-number="19" data-mass="39.0983"></div>
+            <div class="element alkaline col-start-2 row-start-4" data-symbol="Ca" data-name="Calcium" data-number="20" data-mass="40.08"></div>
+            <div class="element transition col-start-3 row-start-4" data-symbol="Sc" data-name="Scandium" data-number="21" data-mass="44.955912"></div>
+            <div class="element transition col-start-4 row-start-4" data-symbol="Ti" data-name="Titanium" data-number="22" data-mass="47.867"></div>
+            <div class="element transition col-start-5 row-start-4" data-symbol="V" data-name="Vanadium" data-number="23" data-mass="50.9415"></div>
+            <div class="element transition col-start-6 row-start-4" data-symbol="Cr" data-name="Chromium" data-number="24" data-mass="51.9961"></div>
+            <div class="element transition col-start-7 row-start-4" data-symbol="Mn" data-name="Manganese" data-number="25" data-mass="54.938045"></div>
+            <div class="element transition col-start-8 row-start-4" data-symbol="Fe" data-name="Iron" data-number="26" data-mass="55.845"></div>
+            <div class="element transition col-start-9 row-start-4" data-symbol="Co" data-name="Cobalt" data-number="27" data-mass="58.933195"></div>
+            <div class="element transition col-start-10 row-start-4" data-symbol="Ni" data-name="Nickel" data-number="28" data-mass="58.6934"></div>
+            <div class="element transition col-start-11 row-start-4" data-symbol="Cu" data-name="Copper" data-number="29" data-mass="63.546"></div>
+            <div class="element post-transition col-start-12 row-start-4" data-symbol="Zn" data-name="Zinc" data-number="30" data-mass="65.38"></div>
+            <div class="element post-transition col-start-13 row-start-4" data-symbol="Ga" data-name="Gallium" data-number="31" data-mass="69.723"></div>
+            <div class="element metalloid col-start-14 row-start-4" data-symbol="Ge" data-name="Germanium" data-number="32" data-mass="72.64"></div>
+            <div class="element metalloid col-start-15 row-start-4" data-symbol="As" data-name="Arsenic" data-number="33" data-mass="74.9216"></div>
+            <div class="element nonmetal col-start-16 row-start-4" data-symbol="Se" data-name="Selenium" data-number="34" data-mass="78.96"></div>
+            <div class="element nonmetal col-start-17 row-start-4" data-symbol="Br" data-name="Bromine" data-number="35" data-mass="79.904"></div>
+            <div class="element noble col-start-18 row-start-4" data-symbol="Kr" data-name="Krypton" data-number="36" data-mass="83.798"></div>
             <!-- Period 5 -->
-            <div class="element alkali col-start-1 row-start-5" data-symbol="Rb" data-name="Rubidium" data-number="37" data-mass="85.4678" style="--n: 37;"></div>
-            <div class="element alkaline col-start-2 row-start-5" data-symbol="Sr" data-name="Strontium" data-number="38" data-mass="87.62" style="--n: 38;"></div>
-            <div class="element transition col-start-3 row-start-5" data-symbol="Y" data-name="Yttrium" data-number="39" data-mass="88.90585" style="--n: 39;"></div>
-            <div class="element transition col-start-4 row-start-5" data-symbol="Zr" data-name="Zirconium" data-number="40" data-mass="91.224" style="--n: 40;"></div>
-            <div class="element transition col-start-5 row-start-5" data-symbol="Nb" data-name="Niobium" data-number="41" data-mass="92.90638" style="--n: 41;"></div>
-            <div class="element transition col-start-6 row-start-5" data-symbol="Mo" data-name="Molybdenum" data-number="42" data-mass="95.96" style="--n: 42;"></div>
-            <div class="element transition col-start-7 row-start-5" data-symbol="Tc" data-name="Technetium" data-number="43" data-mass="98" style="--n: 43;"></div>
-            <div class="element transition col-start-8 row-start-5" data-symbol="Ru" data-name="Ruthenium" data-number="44" data-mass="101.07" style="--n: 44;"></div>
-            <div class="element transition col-start-9 row-start-5" data-symbol="Rh" data-name="Rhodium" data-number="45" data-mass="102.9055" style="--n: 45;"></div>
-            <div class="element transition col-start-10 row-start-5" data-symbol="Pd" data-name="Palladium" data-number="46" data-mass="106.42" style="--n: 46;"></div>
-            <div class="element transition col-start-11 row-start-5" data-symbol="Ag" data-name="Silver" data-number="47" data-mass="107.8682" style="--n: 47;"></div>
-            <div class="element post-transition col-start-12 row-start-5" data-symbol="Cd" data-name="Cadmium" data-number="48" data-mass="112.411" style="--n: 48;"></div>
-            <div class="element post-transition col-start-13 row-start-5" data-symbol="In" data-name="Indium" data-number="49" data-mass="114.818" style="--n: 49;"></div>
-            <div class="element post-transition col-start-14 row-start-5" data-symbol="Sn" data-name="Tin" data-number="50" data-mass="118.71" style="--n: 50;"></div>
-            <div class="element metalloid col-start-15 row-start-5" data-symbol="Sb" data-name="Antimony" data-number="51" data-mass="121.76" style="--n: 51;"></div>
-            <div class="element metalloid col-start-16 row-start-5" data-symbol="Te" data-name="Tellurium" data-number="52" data-mass="127.6" style="--n: 52;"></div>
-            <div class="element nonmetal col-start-17 row-start-5" data-symbol="I" data-name="Iodine" data-number="53" data-mass="126.90447" style="--n: 53;"></div>
-            <div class="element noble col-start-18 row-start-5" data-symbol="Xe" data-name="Xenon" data-number="54" data-mass="131.293" style="--n: 54;"></div>
+            <div class="element alkali col-start-1 row-start-5" data-symbol="Rb" data-name="Rubidium" data-number="37" data-mass="85.4678"></div>
+            <div class="element alkaline col-start-2 row-start-5" data-symbol="Sr" data-name="Strontium" data-number="38" data-mass="87.62"></div>
+            <div class="element transition col-start-3 row-start-5" data-symbol="Y" data-name="Yttrium" data-number="39" data-mass="88.90585"></div>
+            <div class="element transition col-start-4 row-start-5" data-symbol="Zr" data-name="Zirconium" data-number="40" data-mass="91.224"></div>
+            <div class="element transition col-start-5 row-start-5" data-symbol="Nb" data-name="Niobium" data-number="41" data-mass="92.90638"></div>
+            <div class="element transition col-start-6 row-start-5" data-symbol="Mo" data-name="Molybdenum" data-number="42" data-mass="95.96"></div>
+            <div class="element transition col-start-7 row-start-5" data-symbol="Tc" data-name="Technetium" data-number="43" data-mass="98"></div>
+            <div class="element transition col-start-8 row-start-5" data-symbol="Ru" data-name="Ruthenium" data-number="44" data-mass="101.07"></div>
+            <div class="element transition col-start-9 row-start-5" data-symbol="Rh" data-name="Rhodium" data-number="45" data-mass="102.9055"></div>
+            <div class="element transition col-start-10 row-start-5" data-symbol="Pd" data-name="Palladium" data-number="46" data-mass="106.42"></div>
+            <div class="element transition col-start-11 row-start-5" data-symbol="Ag" data-name="Silver" data-number="47" data-mass="107.8682"></div>
+            <div class="element post-transition col-start-12 row-start-5" data-symbol="Cd" data-name="Cadmium" data-number="48" data-mass="112.411"></div>
+            <div class="element post-transition col-start-13 row-start-5" data-symbol="In" data-name="Indium" data-number="49" data-mass="114.818"></div>
+            <div class="element post-transition col-start-14 row-start-5" data-symbol="Sn" data-name="Tin" data-number="50" data-mass="118.71"></div>
+            <div class="element metalloid col-start-15 row-start-5" data-symbol="Sb" data-name="Antimony" data-number="51" data-mass="121.76"></div>
+            <div class="element metalloid col-start-16 row-start-5" data-symbol="Te" data-name="Tellurium" data-number="52" data-mass="127.6"></div>
+            <div class="element nonmetal col-start-17 row-start-5" data-symbol="I" data-name="Iodine" data-number="53" data-mass="126.90447"></div>
+            <div class="element noble col-start-18 row-start-5" data-symbol="Xe" data-name="Xenon" data-number="54" data-mass="131.293"></div>
             <!-- Period 6 -->
-            <div class="element alkali col-start-1 row-start-6" data-symbol="Cs" data-name="Cesium" data-number="55" data-mass="132.90545" style="--n: 55;"></div>
-            <div class="element alkaline col-start-2 row-start-6" data-symbol="Ba" data-name="Barium" data-number="56" data-mass="137.327" style="--n: 56;"></div>
-            <div class="element lanthanide col-start-3 row-start-6" data-symbol="La" data-name="Lanthanum" data-number="57" data-mass="138.90547" style="--n: 57;"></div>
-            <div class="element transition col-start-4 row-start-6" data-symbol="Hf" data-name="Hafnium" data-number="72" data-mass="178.49" style="--n: 72;"></div>
-            <div class="element transition col-start-5 row-start-6" data-symbol="Ta" data-name="Tantalum" data-number="73" data-mass="180.94788" style="--n: 73;"></div>
-            <div class="element transition col-start-6 row-start-6" data-symbol="W" data-name="Tungsten" data-number="74" data-mass="183.84" style="--n: 74;"></div>
-            <div class="element transition col-start-7 row-start-6" data-symbol="Re" data-name="Rhenium" data-number="75" data-mass="186.207" style="--n: 75;"></div>
-            <div class="element transition col-start-8 row-start-6" data-symbol="Os" data-name="Osmium" data-number="76" data-mass="190.23" style="--n: 76;"></div>
-            <div class="element transition col-start-9 row-start-6" data-symbol="Ir" data-name="Iridium" data-number="77" data-mass="192.217" style="--n: 77;"></div>
-            <div class="element transition col-start-10 row-start-6" data-symbol="Pt" data-name="Platinum" data-number="78" data-mass="195.084" style="--n: 78;"></div>
-            <div class="element transition col-start-11 row-start-6" data-symbol="Au" data-name="Gold" data-number="79" data-mass="196.966569" style="--n: 79;"></div>
-            <div class="element transition col-start-12 row-start-6" data-symbol="Hg" data-name="Mercury" data-number="80" data-mass="200.59" style="--n: 80;"></div>
-            <div class="element post-transition col-start-13 row-start-6" data-symbol="Tl" data-name="Thallium" data-number="81" data-mass="204.3833" style="--n: 81;"></div>
-            <div class="element post-transition col-start-14 row-start-6" data-symbol="Pb" data-name="Lead" data-number="82" data-mass="207.2" style="--n: 82;"></div>
-            <div class="element post-transition col-start-15 row-start-6" data-symbol="Bi" data-name="Bismuth" data-number="83" data-mass="208.9804" style="--n: 83;"></div>
-            <div class="element metalloid col-start-16 row-start-6" data-symbol="Po" data-name="Polonium" data-number="84" data-mass="209" style="--n: 84;"></div>
-            <div class="element nonmetal col-start-17 row-start-6" data-symbol="At" data-name="Astatine" data-number="85" data-mass="210" style="--n: 85;"></div>
-            <div class="element noble col-start-18 row-start-6" data-symbol="Rn" data-name="Radon" data-number="86" data-mass="222" style="--n: 86;"></div>
+            <div class="element alkali col-start-1 row-start-6" data-symbol="Cs" data-name="Cesium" data-number="55" data-mass="132.90545"></div>
+            <div class="element alkaline col-start-2 row-start-6" data-symbol="Ba" data-name="Barium" data-number="56" data-mass="137.327"></div>
+            <div class="element lanthanide col-start-3 row-start-6" data-symbol="La" data-name="Lanthanum" data-number="57" data-mass="138.90547"></div>
+            <div class="element transition col-start-4 row-start-6" data-symbol="Hf" data-name="Hafnium" data-number="72" data-mass="178.49"></div>
+            <div class="element transition col-start-5 row-start-6" data-symbol="Ta" data-name="Tantalum" data-number="73" data-mass="180.94788"></div>
+            <div class="element transition col-start-6 row-start-6" data-symbol="W" data-name="Tungsten" data-number="74" data-mass="183.84"></div>
+            <div class="element transition col-start-7 row-start-6" data-symbol="Re" data-name="Rhenium" data-number="75" data-mass="186.207"></div>
+            <div class="element transition col-start-8 row-start-6" data-symbol="Os" data-name="Osmium" data-number="76" data-mass="190.23"></div>
+            <div class="element transition col-start-9 row-start-6" data-symbol="Ir" data-name="Iridium" data-number="77" data-mass="192.217"></div>
+            <div class="element transition col-start-10 row-start-6" data-symbol="Pt" data-name="Platinum" data-number="78" data-mass="195.084"></div>
+            <div class="element transition col-start-11 row-start-6" data-symbol="Au" data-name="Gold" data-number="79" data-mass="196.966569"></div>
+            <div class="element transition col-start-12 row-start-6" data-symbol="Hg" data-name="Mercury" data-number="80" data-mass="200.59"></div>
+            <div class="element post-transition col-start-13 row-start-6" data-symbol="Tl" data-name="Thallium" data-number="81" data-mass="204.3833"></div>
+            <div class="element post-transition col-start-14 row-start-6" data-symbol="Pb" data-name="Lead" data-number="82" data-mass="207.2"></div>
+            <div class="element post-transition col-start-15 row-start-6" data-symbol="Bi" data-name="Bismuth" data-number="83" data-mass="208.9804"></div>
+            <div class="element metalloid col-start-16 row-start-6" data-symbol="Po" data-name="Polonium" data-number="84" data-mass="209"></div>
+            <div class="element nonmetal col-start-17 row-start-6" data-symbol="At" data-name="Astatine" data-number="85" data-mass="210"></div>
+            <div class="element noble col-start-18 row-start-6" data-symbol="Rn" data-name="Radon" data-number="86" data-mass="222"></div>
             <!-- Period 7 -->
-            <div class="element alkali col-start-1 row-start-7" data-symbol="Fr" data-name="Francium" data-number="87" data-mass="223" style="--n: 87;"></div>
-            <div class="element alkaline col-start-2 row-start-7" data-symbol="Ra" data-name="Radium" data-number="88" data-mass="226" style="--n: 88;"></div>
-            <div class="element actinide col-start-3 row-start-7" data-symbol="Ac" data-name="Actinium" data-number="89" data-mass="227" style="--n: 89;"></div>
-            <div class="element transition col-start-4 row-start-7" data-symbol="Rf" data-name="Rutherfordium" data-number="104" data-mass="267" style="--n: 104;"></div>
-            <div class="element transition col-start-5 row-start-7" data-symbol="Db" data-name="Dubnium" data-number="105" data-mass="268" style="--n: 105;"></div>
-            <div class="element transition col-start-6 row-start-7" data-symbol="Sg" data-name="Seaborgium" data-number="106" data-mass="271" style="--n: 106;"></div>
-            <div class="element transition col-start-7 row-start-7" data-symbol="Bh" data-name="Bohrium" data-number="107" data-mass="272" style="--n: 107;"></div>
-            <div class="element transition col-start-8 row-start-7" data-symbol="Hs" data-name="Hassium" data-number="108" data-mass="270" style="--n: 108;"></div>
-            <div class="element transition col-start-9 row-start-7" data-symbol="Mt" data-name="Meitnerium" data-number="109" data-mass="276" style="--n: 109;"></div>
-            <div class="element transition col-start-10 row-start-7" data-symbol="Ds" data-name="Darmstadtium" data-number="110" data-mass="281" style="--n: 110;"></div>
-            <div class="element transition col-start-11 row-start-7" data-symbol="Rg" data-name="Roentgenium" data-number="111" data-mass="280" style="--n: 111;"></div>
-            <div class="element post-transition col-start-12 row-start-7" data-symbol="Cn" data-name="Copernicium" data-number="112" data-mass="285" style="--n: 112;"></div>
-            <div class="element post-transition col-start-13 row-start-7" data-symbol="Nh" data-name="Nihonium" data-number="113" data-mass="284" style="--n: 113;"></div>
-            <div class="element post-transition col-start-14 row-start-7" data-symbol="Fl" data-name="Flerovium" data-number="114" data-mass="289" style="--n: 114;"></div>
-            <div class="element post-transition col-start-15 row-start-7" data-symbol="Mc" data-name="Moscovium" data-number="115" data-mass="288" style="--n: 115;"></div>
-            <div class="element post-transition col-start-16 row-start-7" data-symbol="Lv" data-name="Livermorium" data-number="116" data-mass="293" style="--n: 116;"></div>
-            <div class="element nonmetal col-start-17 row-start-7" data-symbol="Ts" data-name="Tennessine" data-number="117" data-mass="294" style="--n: 117;"></div>
-            <div class="element noble col-start-18 row-start-7" data-symbol="Og" data-name="Oganesson" data-number="118" data-mass="294" style="--n: 118;"></div>
+            <div class="element alkali col-start-1 row-start-7" data-symbol="Fr" data-name="Francium" data-number="87" data-mass="223"></div>
+            <div class="element alkaline col-start-2 row-start-7" data-symbol="Ra" data-name="Radium" data-number="88" data-mass="226"></div>
+            <div class="element actinide col-start-3 row-start-7" data-symbol="Ac" data-name="Actinium" data-number="89" data-mass="227"></div>
+            <div class="element transition col-start-4 row-start-7" data-symbol="Rf" data-name="Rutherfordium" data-number="104" data-mass="267"></div>
+            <div class="element transition col-start-5 row-start-7" data-symbol="Db" data-name="Dubnium" data-number="105" data-mass="268"></div>
+            <div class="element transition col-start-6 row-start-7" data-symbol="Sg" data-name="Seaborgium" data-number="106" data-mass="271"></div>
+            <div class="element transition col-start-7 row-start-7" data-symbol="Bh" data-name="Bohrium" data-number="107" data-mass="272"></div>
+            <div class="element transition col-start-8 row-start-7" data-symbol="Hs" data-name="Hassium" data-number="108" data-mass="270"></div>
+            <div class="element transition col-start-9 row-start-7" data-symbol="Mt" data-name="Meitnerium" data-number="109" data-mass="276"></div>
+            <div class="element transition col-start-10 row-start-7" data-symbol="Ds" data-name="Darmstadtium" data-number="110" data-mass="281"></div>
+            <div class="element transition col-start-11 row-start-7" data-symbol="Rg" data-name="Roentgenium" data-number="111" data-mass="280"></div>
+            <div class="element post-transition col-start-12 row-start-7" data-symbol="Cn" data-name="Copernicium" data-number="112" data-mass="285"></div>
+            <div class="element post-transition col-start-13 row-start-7" data-symbol="Nh" data-name="Nihonium" data-number="113" data-mass="284"></div>
+            <div class="element post-transition col-start-14 row-start-7" data-symbol="Fl" data-name="Flerovium" data-number="114" data-mass="289"></div>
+            <div class="element post-transition col-start-15 row-start-7" data-symbol="Mc" data-name="Moscovium" data-number="115" data-mass="288"></div>
+            <div class="element post-transition col-start-16 row-start-7" data-symbol="Lv" data-name="Livermorium" data-number="116" data-mass="293"></div>
+            <div class="element nonmetal col-start-17 row-start-7" data-symbol="Ts" data-name="Tennessine" data-number="117" data-mass="294"></div>
+            <div class="element noble col-start-18 row-start-7" data-symbol="Og" data-name="Oganesson" data-number="118" data-mass="294"></div>
             <!-- Lanthanides -->
-            <div class="element lanthanide col-start-3 row-start-9" data-symbol="Ce" data-name="Cerium" data-number="58" data-mass="140.116" style="--n: 58;"></div>
-            <div class="element lanthanide col-start-4 row-start-9" data-symbol="Pr" data-name="Praseodymium" data-number="59" data-mass="140.90765" style="--n: 59;"></div>
-            <div class="element lanthanide col-start-5 row-start-9" data-symbol="Nd" data-name="Neodymium" data-number="60" data-mass="144.242" style="--n: 60;"></div>
-            <div class="element lanthanide col-start-6 row-start-9" data-symbol="Pm" data-name="Promethium" data-number="61" data-mass="145" style="--n: 61;"></div>
-            <div class="element lanthanide col-start-7 row-start-9" data-symbol="Sm" data-name="Samarium" data-number="62" data-mass="150.36" style="--n: 62;"></div>
-            <div class="element lanthanide col-start-8 row-start-9" data-symbol="Eu" data-name="Europium" data-number="63" data-mass="151.964" style="--n: 63;"></div>
-            <div class="element lanthanide col-start-9 row-start-9" data-symbol="Gd" data-name="Gadolinium" data-number="64" data-mass="157.25" style="--n: 64;"></div>
-            <div class="element lanthanide col-start-10 row-start-9" data-symbol="Tb" data-name="Terbium" data-number="65" data-mass="158.92535" style="--n: 65;"></div>
-            <div class="element lanthanide col-start-11 row-start-9" data-symbol="Dy" data-name="Dysprosium" data-number="66" data-mass="162.5" style="--n: 66;"></div>
-            <div class="element lanthanide col-start-12 row-start-9" data-symbol="Ho" data-name="Holmium" data-number="67" data-mass="164.93032" style="--n: 67;"></div>
-            <div class="element lanthanide col-start-13 row-start-9" data-symbol="Er" data-name="Erbium" data-number="68" data-mass="167.259" style="--n: 68;"></div>
-            <div class="element lanthanide col-start-14 row-start-9" data-symbol="Tm" data-name="Thulium" data-number="69" data-mass="168.93421" style="--n: 69;"></div>
-            <div class="element lanthanide col-start-15 row-start-9" data-symbol="Yb" data-name="Ytterbium" data-number="70" data-mass="173.054" style="--n: 70;"></div>
-            <div class="element lanthanide col-start-16 row-start-9" data-symbol="Lu" data-name="Lutetium" data-number="71" data-mass="174.9668" style="--n: 71;"></div>
+            <div class="element lanthanide col-start-3 row-start-9" data-symbol="Ce" data-name="Cerium" data-number="58" data-mass="140.116"></div>
+            <div class="element lanthanide col-start-4 row-start-9" data-symbol="Pr" data-name="Praseodymium" data-number="59" data-mass="140.90765"></div>
+            <div class="element lanthanide col-start-5 row-start-9" data-symbol="Nd" data-name="Neodymium" data-number="60" data-mass="144.242"></div>
+            <div class="element lanthanide col-start-6 row-start-9" data-symbol="Pm" data-name="Promethium" data-number="61" data-mass="145"></div>
+            <div class="element lanthanide col-start-7 row-start-9" data-symbol="Sm" data-name="Samarium" data-number="62" data-mass="150.36"></div>
+            <div class="element lanthanide col-start-8 row-start-9" data-symbol="Eu" data-name="Europium" data-number="63" data-mass="151.964"></div>
+            <div class="element lanthanide col-start-9 row-start-9" data-symbol="Gd" data-name="Gadolinium" data-number="64" data-mass="157.25"></div>
+            <div class="element lanthanide col-start-10 row-start-9" data-symbol="Tb" data-name="Terbium" data-number="65" data-mass="158.92535"></div>
+            <div class="element lanthanide col-start-11 row-start-9" data-symbol="Dy" data-name="Dysprosium" data-number="66" data-mass="162.5"></div>
+            <div class="element lanthanide col-start-12 row-start-9" data-symbol="Ho" data-name="Holmium" data-number="67" data-mass="164.93032"></div>
+            <div class="element lanthanide col-start-13 row-start-9" data-symbol="Er" data-name="Erbium" data-number="68" data-mass="167.259"></div>
+            <div class="element lanthanide col-start-14 row-start-9" data-symbol="Tm" data-name="Thulium" data-number="69" data-mass="168.93421"></div>
+            <div class="element lanthanide col-start-15 row-start-9" data-symbol="Yb" data-name="Ytterbium" data-number="70" data-mass="173.054"></div>
+            <div class="element lanthanide col-start-16 row-start-9" data-symbol="Lu" data-name="Lutetium" data-number="71" data-mass="174.9668"></div>
             <!-- Actinides -->
-            <div class="element actinide col-start-3 row-start-10" data-symbol="Th" data-name="Thorium" data-number="90" data-mass="232.03806" style="--n: 90;"></div>
-            <div class="element actinide col-start-4 row-start-10" data-symbol="Pa" data-name="Protactinium" data-number="91" data-mass="231.03588" style="--n: 91;"></div>
-            <div class="element actinide col-start-5 row-start-10" data-symbol="U" data-name="Uranium" data-number="92" data-mass="238.02891" style="--n: 92;"></div>
-            <div class="element actinide col-start-6 row-start-10" data-symbol="Np" data-name="Neptunium" data-number="93" data-mass="237" style="--n: 93;"></div>
-            <div class="element actinide col-start-7 row-start-10" data-symbol="Pu" data-name="Plutonium" data-number="94" data-mass="244" style="--n: 94;"></div>
-            <div class="element actinide col-start-8 row-start-10" data-symbol="Am" data-name="Americium" data-number="95" data-mass="243" style="--n: 95;"></div>
-            <div class="element actinide col-start-9 row-start-10" data-symbol="Cm" data-name="Curium" data-number="96" data-mass="247" style="--n: 96;"></div>
-            <div class="element actinide col-start-10 row-start-10" data-symbol="Bk" data-name="Berkelium" data-number="97" data-mass="247" style="--n: 97;"></div>
-            <div class="element actinide col-start-11 row-start-10" data-symbol="Cf" data-name="Californium" data-number="98" data-mass="251" style="--n: 98;"></div>
-            <div class="element actinide col-start-12 row-start-10" data-symbol="Es" data-name="Einsteinium" data-number="99" data-mass="252" style="--n: 99;"></div>
-            <div class="element actinide col-start-13 row-start-10" data-symbol="Fm" data-name="Fermium" data-number="100" data-mass="257" style="--n: 100;"></div>
-            <div class="element actinide col-start-14 row-start-10" data-symbol="Md" data-name="Mendelevium" data-number="101" data-mass="258" style="--n: 101;"></div>
-            <div class="element actinide col-start-15 row-start-10" data-symbol="No" data-name="Nobelium" data-number="102" data-mass="259" style="--n: 102;"></div>
-            <div class="element actinide col-start-16 row-start-10" data-symbol="Lr" data-name="Lawrencium" data-number="103" data-mass="262" style="--n: 103;"></div>
+            <div class="element actinide col-start-3 row-start-10" data-symbol="Th" data-name="Thorium" data-number="90" data-mass="232.03806"></div>
+            <div class="element actinide col-start-4 row-start-10" data-symbol="Pa" data-name="Protactinium" data-number="91" data-mass="231.03588"></div>
+            <div class="element actinide col-start-5 row-start-10" data-symbol="U" data-name="Uranium" data-number="92" data-mass="238.02891"></div>
+            <div class="element actinide col-start-6 row-start-10" data-symbol="Np" data-name="Neptunium" data-number="93" data-mass="237"></div>
+            <div class="element actinide col-start-7 row-start-10" data-symbol="Pu" data-name="Plutonium" data-number="94" data-mass="244"></div>
+            <div class="element actinide col-start-8 row-start-10" data-symbol="Am" data-name="Americium" data-number="95" data-mass="243"></div>
+            <div class="element actinide col-start-9 row-start-10" data-symbol="Cm" data-name="Curium" data-number="96" data-mass="247"></div>
+            <div class="element actinide col-start-10 row-start-10" data-symbol="Bk" data-name="Berkelium" data-number="97" data-mass="247"></div>
+            <div class="element actinide col-start-11 row-start-10" data-symbol="Cf" data-name="Californium" data-number="98" data-mass="251"></div>
+            <div class="element actinide col-start-12 row-start-10" data-symbol="Es" data-name="Einsteinium" data-number="99" data-mass="252"></div>
+            <div class="element actinide col-start-13 row-start-10" data-symbol="Fm" data-name="Fermium" data-number="100" data-mass="257"></div>
+            <div class="element actinide col-start-14 row-start-10" data-symbol="Md" data-name="Mendelevium" data-number="101" data-mass="258"></div>
+            <div class="element actinide col-start-15 row-start-10" data-symbol="No" data-name="Nobelium" data-number="102" data-mass="259"></div>
+            <div class="element actinide col-start-16 row-start-10" data-symbol="Lr" data-name="Lawrencium" data-number="103" data-mass="262"></div>
         </div>
     </div>
 
@@ -381,7 +375,7 @@
 
                 // Touch support for mobile
                 element.addEventListener("touchstart", (e) => {
-                    e.preventDefault();
+                    e.preventDefault(); // Prevent scrolling on touch
                     clearTimeout(tooltipTimeout);
                     tooltip.textContent = `Atomic Mass: ${element.dataset.mass || 'N/A'}`;
                     tooltip.style.display = "block";
@@ -390,7 +384,7 @@
                     tooltipTimeout = setTimeout(() => {
                         tooltip.style.display = "none";
                         showPopup();
-                    }, 500);
+                    }, 500); // Show popup after 500ms if touch is held
                 });
 
                 element.addEventListener("touchend", () => {
